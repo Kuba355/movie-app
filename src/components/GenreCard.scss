@@ -1,0 +1,18 @@
+.genre-card {
+    padding-block:2rem;
+    padding-inline:2rem;
+    border-radius:0.8rem;
+    background:var(--black);
+    color:white;
+}
+
+.movie-grid
+ {
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:1rem;
+ grid-template-rows:1fr 1fr;
+}
+.genre-card h3 {
+    margin-top:1rem;
+}
