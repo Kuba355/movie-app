@@ -1,0 +1,57 @@
+.movie-card {
+    background-color: var(--black-10);
+    border-radius: 0.8rem;
+    border:1px solid var(--black-15);
+    overflow: hidden;
+    color: #ffffff;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    padding:2rem;
+  
+    .movie-poster {
+      width: 100%;
+      border-radius:0.8rem;
+    }
+  
+    .movie-details {
+        font-size:1rem;
+        margin-top:1rem;
+  
+      .movie-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+  
+        .movie-duration {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          padding:0.4rem 0.8rem;
+          background-color:var(--black-08);
+          border-radius:50px;
+  
+          i.icon-clock {
+            font-size: 1rem;
+          }
+        }
+  
+        .movie-rating {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          padding:0.4rem 0.8rem;
+          background-color:var(--black-08);
+          border-radius:50px;
+  
+          i.icon-star {
+            color: #ffc107; // Złote gwiazdki
+            font-size: 1rem;
+          }
+  
+          span {
+            color: #00ffcc; // Kolor liczby głosów
+          }
+        }
+      }
+    }
+  }

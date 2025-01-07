@@ -21,8 +21,9 @@ html {
   font-size: 62.5%;
 }
 body {
-  background-color: #141414;
+  background-color: var(--black-08);
   color:white;
+  font-size:1.6rem;
 }
 .app-section {
   padding-block: 6rem;
@@ -46,10 +47,12 @@ h2 {
 
 .sliders-wrapper {
   padding:3rem 5rem;
-  background-color:var(--black-10);
   border:1px solid var(--black-15);
   border-radius:0.8rem;
   position:relative;
+  display:flex;
+  flex-direction:column;
+  gap:5rem;
 }
 
 .sliders-wrapper::before {

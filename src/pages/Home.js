@@ -1,6 +1,7 @@
 import React from 'react';
 import HeroSection from '../components/HeroSection';
 import GenreSlider from '../components/GenreSlider';
+import Top10MoviesSlider from '../components/Top10MoviesSlider';
 
 const Home = () => {
   return (
@@ -8,8 +9,12 @@ const Home = () => {
       <HeroSection />
       <section className="app-section">
         <div className="sliders-wrapper" data-attr="Movies">
-            <h2>Our Genres</h2>
-            <GenreSlider />   
+           <div>
+            <GenreSlider />
+          </div>
+          <div>
+            <Top10MoviesSlider />
+          </div>
         </div>
       </section>
     </>

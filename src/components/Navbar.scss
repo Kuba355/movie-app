@@ -1,0 +1,92 @@
+#header {
+    width:100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    position:fixed;
+    padding:2rem 12rem;
+    z-index:9999;
+    top:0;
+
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    color: #ffffff;
+    width:100%;
+    max-width:128rem;
+
+  
+    .navbar-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.5rem;
+      color: #fff; // Turkusowy kolor
+    }
+    .navigation {
+        background:var(--black-08);
+        border-radius:0.8rem;
+        padding:1rem;
+        border:1px solid var(--primary-600);
+    }
+  
+    .navbar-links {
+      display: flex;
+      gap: 15px;
+  
+      .link {
+        background: none;
+        color: #fff;
+        padding: 0.6rem 1.2rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+  
+        &:hover {
+          color: var(--primary-400); // Zmiana koloru tekstu przy najechaniu
+        }
+  
+        &.active {
+          color: var(--primary-400);;
+        }
+      }
+    }
+  
+    .navbar-search {
+      display: flex;
+      align-items: center;
+      padding: 5px 10px;
+      max-width:17rem;
+  
+      i {
+        color: var(--grey-60);
+        margin-right:8px;
+      }
+  
+      input {
+        border: none;
+        background: transparent;
+        outline: none;
+        color: #ffffff;
+        padding:0.4rem ;
+        max-width:12rem;
+        border-bottom:1px solid var(--grey-60);
+  
+        &::placeholder {
+          color: #bbbbbb; // Kolor placeholdera
+        }
+      }
+    }
+  }
+  .navigation {
+    display:flex;
+    flex-direction:row;
+    gap:1.5rem;
+  }
+  .divider {
+    width:1px;  
+    margin:1rem 0;
+    background-color:var(--grey-60);
+  }

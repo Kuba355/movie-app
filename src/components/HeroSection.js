@@ -1,12 +1,20 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './HeroSection.scss';
-import  HeartIcon from './HeartIcon';
+import HeartIcon from './HeartIcon';
 import BrokenHeartIcon from './BrokenHeartIcon';
 import PlusIcon from './PlusIcon';
 
 const HeroSection = () => {
   const [movie, setMovie] = useState(null);
+  const navigate = useNavigate();
+
+  const handleSeeMore = () => {
+    if (movie) {
+      navigate(`/movie/${movie.id}`); // Używamy ID z `movie`
+    }
+  };
 
   useEffect(() => {
     const fetchMovie = async () => {
@@ -57,7 +65,7 @@ const HeroSection = () => {
           <h1>{movie.title}</h1>
           <p>{movie.overview}</p>
           <div className="heroButtons">
-            <button className="btnPrimary btn">See more</button>
+            <button className="btnPrimary btn" onClick={handleSeeMore}>See more</button>
             <button className="btnIcon"><PlusIcon /></button>
             <button className="btnIcon" onClick={() => addToFavorites(movie)}><HeartIcon /></button>
             <button className="btnIcon" onClick={() => addToDisliked(movie)}><BrokenHeartIcon /></button>

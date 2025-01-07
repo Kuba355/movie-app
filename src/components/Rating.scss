@@ -1,0 +1,23 @@
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 1px; // Odstęp między gwiazdkami
+  
+    .fa-star,
+    .fa-star-half-alt,
+    .fa-star-empty {
+      font-size: 8px; // Rozmiar gwiazdek
+    }
+  
+    .full {
+      color: var(--primary-400); // Złoty kolor dla pełnych gwiazdek
+    }
+  
+    .half {
+      color: var(--primary-400); // Ten sam kolor dla pół gwiazdek
+    }
+  
+    .empty {
+      color: #ccc; // Szary kolor dla pustych gwiazdek
+    }
+  }
