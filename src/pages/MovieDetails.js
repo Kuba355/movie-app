@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { FaStar, FaCalendarAlt, FaGlobe, FaTags } from 'react-icons/fa';
+import BrokenHeartIcon from '../components/BrokenHeartIcon'; // Importujemy jako SVG
+import HeartIcon from '../components/HeartIcon';
+import PlusIcon from '../components/PlusIcon';
 import './MovieDetails.scss'; // Stylizacja dla szczegółów filmu
 
 const MovieDetails = () => {
@@ -51,7 +54,11 @@ const MovieDetails = () => {
       <div className="movie-info-wrapper">
         <div className="movie-poster-box">
           <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
-          <button className="add-review-btn">Add a Review</button>
+          <div className="icon-buttons"> {/* Nowa sekcja na ikony */}
+            <div className="icon-button"><BrokenHeartIcon /></div>
+            <div className="icon-button"><HeartIcon /></div>
+            <div className="icon-button"><PlusIcon /></div>
+          </div>
         </div>
         <div className="movie-details-box">
           <div className="detail-item">
@@ -91,12 +98,16 @@ const MovieDetails = () => {
             </div>
           </div>
           <div className="detail-item">
-            <h2>Cast</h2>
+            <h2>Cast</h2><br></br>
             <div className="cast-list">
               {cast && cast.length > 0 ? (
                 cast.map((actor) => (
                   <div key={actor.cast_id} className="cast-member">
-                    <img src={`https://image.tmdb.org/t/p/w200${actor.profile_path}`} alt={actor.name} className="circle" />
+                    <img
+                      src={`https://image.tmdb.org/t/p/w200${actor.profile_path}`}
+                      alt={actor.name}
+                      className="circle"
+                    />
                     <p>{actor.name}</p>
                   </div>
                 ))

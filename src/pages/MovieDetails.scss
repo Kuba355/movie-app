@@ -1,3 +1,9 @@
+:root {
+  --hover-color: #1a1a1a; // Odrobinę ciemniejszy odcień czerni po najechaniu
+  --black-06: #262626; // Obecny kolor czerni używany na przyciskach
+  --black-15: #333; // Kolor obramowania
+}
+
 .movie-details {
   display: flex;
   flex-direction: column;
@@ -28,22 +34,45 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      position: relative; // Ustawienie pozycji względnej dla plakatu
 
       img {
         width: 100%;
-        height: auto;
-        border-radius: 10px;
+        height: 100%;
+        border-radius: 1px;
       }
 
-      .add-review-btn {
-        margin-top: 10px;
-        padding: 10px 20px;
-        background-color: #28a745;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        cursor: not-allowed;
+      .icon-buttons {
+        position: absolute; // Ustawienie pozycji absolutnej dla ikon
+        bottom: 25px; // Odległość od dołu plakatu
+        left: 50%; // Wyśrodkowanie ikon
+        transform: translateX(-50%); // Wyśrodkowanie ikon
+        display: flex;
+        gap: 10px; // Odstępy między ikonami
+      
+        .icon-button {
+          width: 30px;
+          height: 30px;
+          background-color: var(--black-06);
+          border: 1px solid var(--black-15);
+          border-radius: 0.1rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer; // Kursor w stylu "pointer" dla przycisków
+      
+          &:hover {
+            background-color: var(--hover-color); // Zmieniony kolor po najechaniu
+          }
+      
+          svg {
+            fill: white; // Biały kolor ikon
+            width: 10%; // Ustawienie szerokości ikony
+            height: 10%; // Ustawienie wysokości ikony
+          }
+        }
       }
+      
     }
 
     .movie-details-box {
@@ -108,25 +137,36 @@
       }
 
       .cast-list {
-        display: flex;
-        flex-wrap: nowrap; /* Ustawienie zdjęć aktorów w jednej linii */
-        justify-content: space-between;
-
+        display: inline; // Wyświetl w jednym rzędzie
+        align-items: center;
+        flex-wrap: wrap; // Zapobiegaj zawijaniu się elementów
+        gap: 15px; // Odstępy między zdjęciami
+        overflow-x: auto; // Przewijanie, jeśli elementów jest zbyt dużo
+      
         .cast-member {
-          margin: 10px;
+          display: inline;
+          flex-direction: column;
+          align-items: center;
           text-align: center;
-
+      
           img.circle {
-            width: 100px;
-            height: 100px;
+            width: 40px; // Zmniejszenie szerokości zdjęć o połowę
+            height: 40px; // Zmniejszenie wysokości zdjęć o połowę
             object-fit: cover;
             border-radius: 50%;
           }
-
+      
           p {
-            margin: 5px 0;
+            margin-top: 2px;
+            font-size: 0.9rem;
+            color: #ccc;
           }
         }
+      }
+      
+
+      p {
+        margin: 5px 0;
       }
     }
   }
