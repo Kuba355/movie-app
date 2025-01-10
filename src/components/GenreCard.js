@@ -19,7 +19,7 @@ const GenreCard = ({ genre }) => {
 
         setMovies(movieResponse.data.results.slice(0, 4)); // Pobieramy 4 filmy
       } catch (error) {
-        console.error(`Error fetching movies for genre ${genre.name}:`, error);
+        console.error(`Error fetching movies for genre ${genre.id}:`, error);
       }
     };
 

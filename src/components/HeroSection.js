@@ -40,18 +40,6 @@ const HeroSection = () => {
     fetchMovie();
   }, []);
 
-  const addToFavorites = (movie) => {
-    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-    localStorage.setItem('favorites', JSON.stringify([...favorites, movie]));
-    alert(`${movie.title} added to favorites!`);
-  };
-
-  const addToDisliked = (movie) => {
-    const disliked = JSON.parse(localStorage.getItem('disliked')) || [];
-    localStorage.setItem('disliked', JSON.stringify([...disliked, movie]));
-    alert(`${movie.title} added to disliked movies!`);
-  };
-
   if (!movie) return <div>Loading...</div>;
 
   return (
@@ -66,9 +54,9 @@ const HeroSection = () => {
           <p>{movie.overview}</p>
           <div className="heroButtons">
             <button className="btnPrimary btn" onClick={handleSeeMore}>See more</button>
-            <button className="btnIcon"><PlusIcon /></button>
-            <button className="btnIcon" onClick={() => addToFavorites(movie)}><HeartIcon /></button>
-            <button className="btnIcon" onClick={() => addToDisliked(movie)}><BrokenHeartIcon /></button>
+            <HeartIcon movie={movie} />
+            <BrokenHeartIcon movie={movie} />
+            <PlusIcon movie={movie} />
           </div>
       </div>
     </section>
