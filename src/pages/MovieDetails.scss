@@ -1,0 +1,133 @@
+.movie-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #1c1c1c;
+  color: #fff;
+
+  .movie-info-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+
+    .movie-poster-box, .movie-details-box {
+      flex: 1;
+      background-color: #2c2c2c;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 0 10px;
+      box-sizing: border-box;
+      max-width: 480px;
+    }
+
+    .movie-poster-box {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+      }
+
+      .add-review-btn {
+        margin-top: 10px;
+        padding: 10px 20px;
+        background-color: #28a745;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: not-allowed;
+      }
+    }
+
+    .movie-details-box {
+      display: flex;
+      flex-direction: column;
+
+      .detail-item {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: row;
+        margin-bottom: 20px;
+
+        .icon {
+          margin-right: 10px;
+          color: #1e90ff;
+        }
+
+        > div {
+          display: flex;
+          flex-direction: column;
+        }
+
+        span {
+          font-size: 1rem;
+        }
+
+        .languages, .genres {
+          display: flex;
+          flex-wrap: wrap;
+          margin-top: 5px;
+        }
+
+        .language-tag, .genre-tag {
+          margin: 5px;
+          padding: 5px 10px;
+          background-color: #444;
+          border-radius: 5px;
+        }
+
+        .stars {
+          margin-top: 5px;
+          display: flex;
+        }
+
+        .star {
+          margin-right: 5px;
+          color: #1e90ff; // Niebieski kolor dla gwiazdek
+        }
+
+        .half {
+          color: #1e90ff; // Niebieski kolor dla połówek gwiazdek
+        }
+
+        .empty {
+          color: #ddd; // Kolor dla pustych gwiazdek
+        }
+      }
+
+      h2 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+      }
+
+      .cast-list {
+        display: flex;
+        flex-wrap: nowrap; /* Ustawienie zdjęć aktorów w jednej linii */
+        justify-content: space-between;
+
+        .cast-member {
+          margin: 10px;
+          text-align: center;
+
+          img.circle {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+          }
+
+          p {
+            margin: 5px 0;
+          }
+        }
+      }
+    }
+  }
+}
