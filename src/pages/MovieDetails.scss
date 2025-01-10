@@ -111,6 +111,7 @@
         display: flex;
         flex-wrap: nowrap; /* Ustawienie zdjęć aktorów w jednej linii */
         justify-content: space-between;
+        flex-direction: row;
 
         .cast-member {
           margin: 10px;
