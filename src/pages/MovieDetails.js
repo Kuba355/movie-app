@@ -54,51 +54,53 @@ const MovieDetails = () => {
       <div className="movie-info-wrapper">
         <div className="movie-poster-box">
           <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
-          <div className="icon-buttons"> {/* Nowa sekcja na ikony */}
-            <div className="icon-button"><BrokenHeartIcon /></div>
-            <div className="icon-button"><HeartIcon /></div>
-            <div className="icon-button"><PlusIcon /></div>
-          </div>
         </div>
         <div className="movie-details-box">
-          <div className="detail-item">
-            <FaCalendarAlt className="icon" />
-            <div>
-              <span><strong>Released Year:</strong></span>
-              <span>{movie.release_date.split('-')[0]}</span>
-            </div>
+        <div className="actions-box">
+            <HeartIcon movie={movie} />
+            <BrokenHeartIcon movie={movie} />
+            <PlusIcon movie={movie} />
           </div>
           <div className="detail-item">
-            <FaGlobe className="icon" />
-            <div>
-              <span><strong>Available Languages:</strong></span>
+            <div className="detail-item-label">
+              <FaCalendarAlt className="icon" />
+              <span><strong>Released Year:</strong></span>
+            </div>
+              <span>{movie.release_date.split('-')[0]}</span>
+          </div>
+          <div className="detail-item">
+              <div className="detail-item-label">
+                <FaGlobe className="icon" />
+                <span><strong>Available Languages:</strong></span>
+              </div>
               <div className="languages">
                 {movie.spoken_languages.map((lang, index) => (
                   <span key={index} className="language-tag">{lang.english_name}</span>
                 ))}
               </div>
-            </div>
           </div>
           <div className="detail-item">
-            <FaStar className="icon" />
-            <div>
+            <div className='detail-item-label'>
+              <FaStar className="icon" />
               <span><strong>Rating:</strong></span>
+            </div>
+            <div>
               {renderStars(movie.vote_average)}
             </div>
           </div>
           <div className="detail-item">
-            <FaTags className="icon" />
-            <div>
+            <div className='detail-item-label'>
+              <FaTags className="icon" />
               <span><strong>Genres:</strong></span>
+            </div>
               <div className="genres">
                 {genres.map((genre, index) => (
                   <span key={index} className="genre-tag">{genre.name}</span>
                 ))}
               </div>
-            </div>
           </div>
           <div className="detail-item">
-            <h2>Cast</h2><br></br>
+            <p>Cast</p>
             <div className="cast-list">
               {cast && cast.length > 0 ? (
                 cast.map((actor) => (
@@ -116,6 +118,7 @@ const MovieDetails = () => {
               )}
             </div>
           </div>
+
         </div>
       </div>
     </div>
