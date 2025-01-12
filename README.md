@@ -1,4 +1,4 @@
-Singe Page Application - Movie study group. Realizowana na potrzeby ćwiczeń.
+Singe Page Application - Movie study group. Aplikacja pozwala na przeglądanie filmów, dodawanie ich do kilku list - polubionych, nielubianych i do obejrzenia. 
 
 Uzyte technologie: HTML5, CSS3, JavaScript, React.js
 
@@ -24,3 +24,15 @@ W aplikacji użyto React Router do zarządzania ruchem użytkownika między stro
 Aplikacja nie korzysta z bezpośredniego połączenia z bazą danych. Dane są pobierane z zewnętrznego API (TMDB), a lokalne dane użytkownika (np. ulubione filmy) są przechowywane w localStorage.
 	•	Użyto biblioteki Axios do wykonywania zapytań HTTP
     •   Dane z API są dynamicznie wyświetlane w komponentach, takich jak HeroSection i MovieDetails.
+
+
+Aby uruchomić aplikację, nalezy uzyc komendy
+
+npm install
+
+Po instalacji pakietów wystarczy wpisac komendę
+
+npm start
+
+Uruchomi ona aplikację na lokalnym serwerze.
+
